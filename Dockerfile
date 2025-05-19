@@ -1,8 +1,6 @@
 ARG ARCH=
 FROM debian:latest
 
-RUN mkdir /ventoy
-
 RUN apt update && apt upgrade -y
 
 RUN apt install -y psutils less procps
