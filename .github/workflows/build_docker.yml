@@ -1,6 +1,11 @@
 name: Build Ventoy Docker Image
 run-name: build ventoy docker image
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '*'
+
 jobs:
   BuildAndDeploy:
     runs-on: ubuntu-latest
