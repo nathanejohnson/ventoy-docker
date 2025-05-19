@@ -1,4 +1,4 @@
-Simple docker image that packages [ventoy](https://www.ventoy.net) program.
+Simple docker image that packages the [ventoy](https://www.ventoy.net) program.
 
 https://github.com/nathanejohnson/ventoy-docker
 
