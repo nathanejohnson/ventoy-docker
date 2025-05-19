@@ -1,0 +1,31 @@
+name: Build Ventoy Docker Image
+run-name: build ventoy docker image
+on: [push]
+jobs:
+  BuildAndDeploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: $DOCKERHUB_USERNAME
+          password: ${{ secrets.DOCKERHUB }}
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      - name: Get ventoy version
+        run: make version >> $GITHUB_ENV
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: true
+          tags: |
+            nathanejohnson/ventoy:latest
+            nathanejohnson/ventoy:$VENTOY_VERSION
+        
