@@ -8,7 +8,7 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
-          username: $DOCKERHUB_USERNAME
+          username: ${{ vars.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB }}
 
       - name: Checkout Repository
@@ -27,5 +27,5 @@ jobs:
           push: true
           tags: |
             nathanejohnson/ventoy:latest
-            nathanejohnson/ventoy:$VENTOY_VERSION
+            nathanejohnson/ventoy:${{ env.VENTOY_VERSION }}
         
