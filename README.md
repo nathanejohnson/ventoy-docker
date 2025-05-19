@@ -13,3 +13,4 @@ If you'd prefer to use the cli, you could instead do the same as above, but over
     docker run --device /dev/sdc --rm -it -p 24680:24680 nathanejohnson/ventoy:latest /bin/bash
 
 
+You can build this locally by simply running make, and it will build an image tagged as ventoy:latest as well as ventoy:<ventoy version number>
