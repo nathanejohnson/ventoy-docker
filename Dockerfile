@@ -1,3 +1,4 @@
+ARG ARCH=
 FROM debian:latest
 
 RUN mkdir /ventoy
