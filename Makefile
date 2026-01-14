@@ -1,6 +1,6 @@
 .PHONY: build clean version
 
-version = 1.1.08
+version = 1.1.10
 
 tarball = ventoy-$(version)-linux.tar.gz
 
